@@ -1,15 +1,15 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
     <>
-      <div class="bg-color">
-        <nav class="navbar navbar-expand-sm navbar-light ">
-          <a class="navbar-brand" href="#">
-            <img src="/img/logo3.png" alt="..." class="logoform" />
+      <div className="bg-color">
+        <nav className="navbar navbar-expand-sm navbar-light ">
+          <a className="navbar-brand" href="/">
+            <img src="/img/logo3.png" alt="..." className="logoform" />
           </a>
           <button
-            class="navbar-toggler d-lg-none"
+            className="navbar-toggler d-lg-none"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapsibleNavId"
@@ -17,62 +17,33 @@ export default function NavBar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="#" aria-current="page">
-                  Accueil <span class="visually-hidden">(current)</span>
-                </a>
+          <div className="collapse navbar-collapse" id="collapsibleNavId">
+            <ul className="navbar-nav me-auto mt-2 mt-lg-0">
+              <li className="nav-item">
+                <Link to="/" className="nav-link active">
+                  Accueil
+                </Link>
               </li>
-
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="dropdownId"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Nos Services
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                  <a class="dropdown-item" href="#">
-                    Jardins
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    Mariages
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    Cadeaux
-                  </a>
-                </div>
+              <li className="nav-item">
+                <Link to="/bouquets" className="nav-link active">
+                  Bouquets
+                </Link>
               </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="dropdownId"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Nos Contact
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                  <a class="dropdown-item" href="#">
-                    Tel :+213 665440130
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    Adresse :Tichy RN9 - Béjaia{" "}
-                  </a>
-                </div>
+              <li className="nav-item">
+                <Link to="/fleurs" className="nav-link active">
+                  Fleurs
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/compte" className="nav-link active">
+                  Compte
+                </Link>
               </li>
             </ul>
-            <form class="d-flex my-2 my-lg-0 p-2 ">
-              <button class="btn btn-color my-2 my-sm-0 " type="submit">
+            <form className="d-flex my-2 my-lg-0 p-2 ">
+              <button className="btn btn-color my-2 my-sm-0 " type="submit">
                 Commander
               </button>
             </form>
