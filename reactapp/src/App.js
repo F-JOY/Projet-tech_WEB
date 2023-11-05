@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Compte from "./pages/Compte";
 import Fleurs from "./pages/Fleurs";
 import Footer from "./component/footer";
+import { state } from "./data/state";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/bouquets" element={<Bouquets />} />
+          <Route path="/bouquets" element={<Bouquets  bouquets={state.mesBouquets}/>} />
           <Route path="/fleurs" element={<Fleurs />} /> 
           <Route path="/compte" element={<Compte />} /> 
         </Routes>

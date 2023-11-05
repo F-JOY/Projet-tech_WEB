@@ -1,6 +1,14 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { state } from "../data/state";
 export default function NavBar() {
+/*
+  const state ={navigation: [
+    {id: 1, path: "/",  label: "Accueil" },
+    {id: 2, path: "/bouquets",  label: "Bouquets"},
+    { id: 3, path: "/fleurs",  label: "Fleurs" },
+    {id: 4,  path: "/compte", label: "Mon Compt" },
+  ]};
+*/
   return (
     <>
       <div className="bg-color">
@@ -21,26 +29,15 @@ export default function NavBar() {
           </button>
           <div className="collapse navbar-collapse" id="collapsibleNavId">
             <ul className="navbar-nav me-auto mt-2 mt-lg-0">
-              <li className="nav-item">
-                <Link to="/" className="nav-link active">
-                  Accueil
+                {state.navigation.map((nav)=>(
+
+              <li key={nav.id} className="nav-item">
+                <Link to={nav.path} className="nav-link active">
+                 {nav.label}
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/bouquets" className="nav-link active">
-                  Bouquets
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/fleurs" className="nav-link active">
-                  Fleurs
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/compte" className="nav-link active">
-                  Compte
-                </Link>
-              </li>
+
+                ))}
             </ul>
             <form className="d-flex my-2 my-lg-0 p-2 ">
               <button className="btn btn-color my-2 my-sm-0 " type="submit">

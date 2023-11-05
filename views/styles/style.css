@@ -34,3 +34,7 @@
     border-radius: 5px;
    
 }
+.card-image{
+ height: 350px;
+ width: auto;
+}

@@ -1,5 +1,6 @@
+import { state } from "../data/state";
 export default function Slider() {
-  const state = {
+ /* const state = {
     slides: [
       {
         id: 1,
@@ -26,7 +27,7 @@ export default function Slider() {
       },
     ],
   };
-
+*/
   return (
     <>
       <div className="row ">
@@ -64,7 +65,7 @@ export default function Slider() {
                   <div className="container-fluid d-flex justify-content-center align-items-center">
                     <img
                       src={slide.image}
-                      className="img-fluid w-100"
+                      className="img-fluid "
                       alt="..."
                     />
                   </div>

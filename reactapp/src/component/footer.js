@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-color p-4 mt-4">
-      <div className="container">
+    <footer className="bg-color p-4 mt-4 fixed bottom-0">
+      <div className="container ">
         <div className="row">
           <div className="col-md-12 text-center">
             <h5>À propos de nous</h5>
@@ -12,7 +12,7 @@ export default function Footer() {
             </p>
           </div>
         </div>
-
+        <hr class="footer-divider"/>
         <div className="row">
           <div className="col-md-12 text-center">
             <p>&copy; 2023 Florify. Tous droits réservés.</p>
