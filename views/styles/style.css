@@ -21,6 +21,19 @@
      color: rgb(254,202,232); 
     border-color: #ff69b4; 
 }
+.btn-liked{
+    background-color: transparent;
+    padding: 10px 20px;
+    margin: 10px; 
+     border: 2px solid rgb(245, 240, 243); 
+     color: rgb(254,202,232); 
+     font-size: 16px; 
+     font-weight: bold; 
+    border-radius: 5px; 
+    border-color: #ff69b4; 
+     transition: background-color 0.3s, color 0.3s, border-color 0.3s; 
+}
+
 .logoform{
     height: 50px;
    width: 150px;
@@ -35,6 +48,6 @@
    
 }
 .card-image{
- height: 350px;
+ height: 300px;
  width: auto;
 }

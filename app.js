@@ -13,6 +13,7 @@ app.use(connectLivereload());
 
 app.use('/img',express.static(path.join(__dirname, 'views/images')))
 app.use('/images',express.static(path.join(__dirname, 'views/imagesB')))
+app.use('/image',express.static(path.join(__dirname, 'views/imagesF')))
 app.use('/css', express.static(path.join(__dirname,'node_modules/bootstrap/dist/css')))
 app.use('/js', express.static(path.join(__dirname,'node_modules/bootstrap/dist/js')))
 app.use('/js', express.static(path.join(__dirname,'node_modules/jquery/dist')))

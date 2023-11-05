@@ -52,35 +52,68 @@ export  const state={
         nom:'Bouquet de Tunis',
         descr:'Un dosage parfait de jasmins et de tulipes, des coulers éclatantes et du soleil toute l\'année chez vous',
         image:"/images/Btulipe.jpg",
-        prix:'1500.00'
+        prix:'1500.00',
+        like:false,
+        nbLike:0,
       },
       {
         id:2,
         nom:'Bouquet d\'Alger',
         descr:'Un dosage parfait de jasmins et de senteurs méditeriannes , des odeurs éclatantes pour égayer votre bureau',
         image:"/images/Bjasmin.jpg",
-        prix:"2000.00"
+        prix:"2000.00",
+        like:false,
+        nbLike:0,
       },
       {
         id:3,
         nom:'Bouquet d\'Oran',
         descr:'Un mélange merveilleux de roses et de lys,des odeurs et des couleurs qui exhale un doux parfum.',
         image:"/images/blys.jpg",
-        prix:"2000.00"
+        prix:"2000.00",
+        like:false,
+        nbLike:0,
+      }, {
+        id:4,
+        nom:'Bouquet d\'Oran',
+        descr:'Un mélange merveilleux de roses et de lys,des odeurs et des couleurs qui exhale un doux parfum.',
+        image:"/images/blys.jpg",
+        prix:"2000.00",
+        like:false,
+        nbLike:0,
+      },
+      {
+        id:5,
+        nom:'Bouquet d\'Oran',
+        descr:'Un mélange merveilleux de roses et de lys,des odeurs et des couleurs qui exhale un doux parfum.',
+        image:"/images/blys.jpg",
+        prix:"2000.00",
+        like:false,
+        nbLike:0,
       }
     ],
     Fleurs:[
         {
             id:1,
             nom:"jasmin",
-            discr:"Facile d’entretien, le jasmin est un séduisant arbuste grimpant à la magnifique floraison estivale blanche ou jaune qui exhale un doux parfum."
-
+            discr:"Facile d’entretien, le jasmin est un séduisant arbuste grimpant à la magnifique floraison estivale blanche ou jaune qui exhale un doux parfum.",
+            image:"/image/jasmin.jpg"
         },{
             id:2,
+            nom:"lys",
+            discr:"Facile d’entretien, le jasmin est un séduisant arbuste grimpant à la magnifique floraison estivale blanche ou jaune qui exhale un doux parfum.",
+            image:"/image/lys.jpg"
+
         },{
             id:3,
+            nom:"Tulipe",
+            discr:"Facile d’entretien, le jasmin est un séduisant arbuste grimpant à la magnifique floraison estivale blanche ou jaune qui exhale un doux parfum.",
+            image:"/image/tulipe.jpg"
         },{
             id:4,
+            nom:"Rose",
+            discr:"Facile d’entretien, le jasmin est un séduisant arbuste grimpant à la magnifique floraison estivale blanche ou jaune qui exhale un doux parfum.",
+            image:"/image/rose.jpg"
         }
     ]
 

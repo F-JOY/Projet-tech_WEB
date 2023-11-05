@@ -14,8 +14,8 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/bouquets" element={<Bouquets  bouquets={state.mesBouquets}/>} />
-          <Route path="/fleurs" element={<Fleurs />} /> 
+          <Route path="/bouquets" element={<Bouquets titre="Découvrir Nos Bouquets" bouquets={state.mesBouquets}/>} />
+          <Route path="/fleurs" element={<Fleurs fleurs={state.Fleurs}/>} /> 
           <Route path="/compte" element={<Compte />} /> 
         </Routes>
       <Footer />
