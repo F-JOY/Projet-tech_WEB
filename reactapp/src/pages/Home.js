@@ -1,8 +1,8 @@
 import Slider from "../component/slider";
-import { state } from "../data/state";
+//import { state } from "../data/state";
 import Bouquets from "./Bouquets";
-export default function Home(){
-    const bouquetsLiked = state.mesBouquets.filter(bouquet => bouquet.like===true);
+export default function Home(props){
+    const bouquetsLiked = props.bouquets.filter(bouquet => bouquet.like===true);
     return(
         <>
         <Slider/>

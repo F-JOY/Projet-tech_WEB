@@ -1,6 +1,26 @@
 import { useState } from "react";
 const Bouquet = (props) => {
   const [like, setLike] = useState(props.bouquet.like);
+  const handleLike = async () => {
+    try {
+      const response = await fetch(`/api/bouquets/like/${props.bouquet.id}`, {
+        method: 'PUT',
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data.message);
+        setLike(!like);
+      } else {
+        console.error('Échec de la mise à jour du statut "like"');
+      }
+    } catch (error) {
+      console.error('Une erreur s\'est produite :', error);
+    }
+  };
+
+
+
   return (
     <>
       <div className="col-lg-4 col-md-6 mb-4 container d-flex justify-content-center align-items-center">
@@ -13,12 +33,7 @@ const Bouquet = (props) => {
               <h5 className="col-md-6">prix: {props.bouquet.prix}</h5>
               <button
                 className={like ? "btn-liked m-auto" : "btn btn-color m-auto"}
-                onClick={() => {
-                     setLike(!like);
-                     props.bouquet.like=(! props.bouquet.like)}
-
-                }
-                   
+                onClick={handleLike} 
               >
                 {like ? "Liked" : "Like"}
               </button>

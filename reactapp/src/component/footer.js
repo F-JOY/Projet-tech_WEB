@@ -12,7 +12,7 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <hr class="footer-divider"/>
+        <hr className="footer-divider"/>
         <div className="row">
           <div className="col-md-12 text-center">
             <p>&copy; 2023 Florify. Tous droits réservés.</p>

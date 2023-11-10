@@ -8,7 +8,10 @@ export default function Bouquets(props) {
       <div className="container ">
         <div className="row">
           {props.bouquets.map((bouquet) => (
-            <Bouquet bouquet={bouquet} />
+            <div key={bouquet.id}>
+               <Bouquet bouquet={bouquet} />
+            </div>
+           
           ))}
         </div>
       </div>
