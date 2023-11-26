@@ -11,7 +11,7 @@ function App() {
   const [mesBouquets, setMesBouquets] = useState([]);
   
   useEffect(() => {
-    fetch('http://localhost:5000/Api/bouquets')
+    fetch('http://localhost:5000/api/bouquets')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

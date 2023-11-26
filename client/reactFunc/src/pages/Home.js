@@ -1,14 +1,23 @@
+import { useState,useEffect } from "react";
 import Slider from "../component/slider";
-//import { state } from "../data/state";
-import Bouquets from "./Bouquets";
+
+import Text from "../component/text";
+import Rates from "../component/rates";
 export default function Home(props){
-    const bouquetsLiked = props.bouquets.filter(bouquet => bouquet.like===true);
+    const [bouquetsLiked, setBouquetLiked] = useState(props.bouquets.filter(bouquet => bouquet.like === true));
+
+    useEffect(() => {
+      
+     
+      }, [bouquetsLiked]);
+       
     return(
         <>
-        <Slider/>
-        
-        <Bouquets titre="Nos Bouquets Populaires" bouquets={bouquetsLiked}/>
-        
+        <Slider/> 
+        <div className="section-devider"></div>
+        <Text/>
+        <div className="section-devider"></div>
+        <Rates/>
         </>
     );
 

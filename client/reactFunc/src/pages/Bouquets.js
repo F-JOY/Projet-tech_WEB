@@ -1,6 +1,8 @@
+
 import Bouquet from "../component/bouquet";
 
 export default function Bouquets(props) {
+
   return (
     <>
      <div className="container-fluid d-flex justify-content-center align-items-center p-4 mt-4">

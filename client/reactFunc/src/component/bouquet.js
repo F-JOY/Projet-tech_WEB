@@ -1,24 +1,34 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 const Bouquet = (props) => {
-  const [like, setLike] = useState(props.bouquet.like);
-  const handleLike = async () => {
-    try {
-      const response = await fetch(`/api/bouquets/like/${props.bouquet.id}`, {
-        method: 'PUT',
-      });
+  
+    const [B, setB] = useState(props.bouquet);
+   
+    useEffect(() => {
+      // This effect runs when the bouquet data changes
+      console.log("Bouquet data changed:", B.like);
+      // Add logic here to handle the changes in the Bouquet component
+    }, [B]);
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data.message);
-        setLike(!like);
-      } else {
-        console.error('Échec de la mise à jour du statut "like"');
+    const handleLike = async () => {
+      console.log("handleLike called");
+      try {
+        const response = await fetch(`http://localhost:5000/api/bouquets/like/${props.bouquet.id}`, {
+          method: 'PUT',
+        });
+    
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data.message);
+          setB(data.bouquet)
+
+        } else {
+          console.error('Échec de la mise à jour du statut "like"');
+        }
+      } catch (error) {
+        console.error('Une erreur s\'est produite :', error);
       }
-    } catch (error) {
-      console.error('Une erreur s\'est produite :', error);
-    }
-  };
-
+    };
+    
 
 
   return (
@@ -32,10 +42,10 @@ const Bouquet = (props) => {
             <div className="d-flex justify-content-end align-items-end">
               <h5 className="col-md-6">prix: {props.bouquet.prix}</h5>
               <button
-                className={like ? "btn btn-liked m-auto" : "btn btn-color m-auto"}
+                className={B.like ? "btn btn-liked m-auto" : "btn btn-color m-auto"}
                 onClick={handleLike} 
               >
-                {like ? "Liked" : "Like"}
+               {B.like ? "Liked" : "Like"}
               </button>
             </div>
           </div>

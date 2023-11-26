@@ -13,8 +13,7 @@ liveReloadServer.watch(path.join(__dirname, "../client/views/styles"));
 app.use(connectLivereload());
 /////////////////cors methode request from client 3000 to server 5000/////////////////////////
 const cors = require('cors');
-app.use(cors({ origin: 'http://localhost:3000' }));
-app.use(cors({ origin: 'http://localhost:3001' }));
+app.use(cors());
 ////////////////////////////////////////////////////////////////////
 app.use("/img", express.static(path.join(__dirname, "../client/views/images")));
 app.use("/image", express.static(path.join(__dirname, "../client/views/images")));
@@ -46,11 +45,12 @@ app.get("/api/bouquets", (req, res) => {
 
 app.put("/api/bouquets/like/:id", (req, res) => {
   const bouquetId = parseInt(req.params.id);
-  const newBouquets = Data.find((bouquet) => bouquet.id === bouquetId);
-  if (newBouquets) {
-    newBouquets.like = !newBouquets.like;
+  const newBouquet = Data.find((bouquet) => bouquet.id === bouquetId);
+  if (newBouquet) {
+    newBouquet.like = !newBouquet.like;
     res.json({
       message: 'Valeur "like" mise à jour pour le bouquet ID ' + bouquetId,
+      bouquet:newBouquet
     });
   } else {
     res.status(404).json({ error: "Bouquet non trouvé" });

@@ -1,5 +1,5 @@
 .footer-divider {
-    border-top: 1px solid rgb(217, 89, 164);
+    border-top: 1px solid #d959a4;
 }
 .bg-color{
     background-color:rgb(245, 240, 243);
@@ -26,7 +26,7 @@
     padding: 10px 20px;
     margin: 10px; 
      border: 2px solid rgb(245, 240, 243); 
-     color: rgb(254,202,232); 
+     color: #fecae8; 
      font-size: 16px; 
      font-weight: bold; 
     border-radius: 5px; 
@@ -59,3 +59,36 @@
     
     color:red;
 }
+.avis-card {
+    border: 1px solid #ddd; /* Adds a thin border to the card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .avatar-container {
+    padding: 8px; /* Adjust the padding for spacing */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+  }
+  
+  .line {
+    width: 100%;
+   
+    border-top: 10px solid #d959a4; /* Adds a horizontal line above and below the avatar */
+  }
+  
+  .commentaire {
+    padding: 16px;
+  }
+  .section-devider{
+    
+    height: 60px;
+  }
+  .itemAdded{
+    color: rgb(11, 11, 248);
+  }
+  
+
+  
+  
