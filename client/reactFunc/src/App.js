@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Compte from "./pages/Compte";
 import Fleurs from "./pages/Fleurs";
 import Footer from "./component/footer";
+import ShoppingCart from "./pages/ShoppingCart";
 import { state } from "./data/state";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import {  useEffect,useState } from "react";
@@ -11,7 +12,7 @@ function App() {
   const [mesBouquets, setMesBouquets] = useState([]);
   
   useEffect(() => {
-    fetch('http://localhost:5000/api/bouquets')
+    fetch('http://localhost:5000/api/getBouquets')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -35,6 +36,7 @@ function App() {
           <Route path="/bouquets" element={<Bouquets titre="Découvrir Nos Bouquets" bouquets={mesBouquets}/>} />
           <Route path="/fleurs" element={<Fleurs fleurs={state.Fleurs}/>} /> 
           <Route path="/compte" element={<Compte />} /> 
+          <Route path="/pannier" element={<ShoppingCart/>} />
         </Routes>
       <Footer />
       </BrowserRouter>      

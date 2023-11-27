@@ -29,7 +29,7 @@ const Rates = () => {
   return (
     <>
       <div className="container d-flex justify-content-center align-items-center">
-        <h1>Votre avis compte</h1>
+        <h1>Votre avis compte pour nous</h1>
       </div>
       <div className="container d-flex justify-content-center align-items-center">
         <div className="row">

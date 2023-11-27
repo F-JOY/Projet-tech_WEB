@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
+import { useState,useEffect } from "react";
 import { state } from "../data/state";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import Badge from '@mui/material/Badge';
+import { IconButton } from "@mui/material";
 export default function NavBar() {
 /*
   const state ={navigation: [
@@ -9,6 +13,26 @@ export default function NavBar() {
     {id: 4,  path: "/compte", label: "Mon Compt" },
   ]};
 */
+const [cartItemCount, setCartItemCount] = useState(0);
+
+useEffect(() => {
+  const handleStorageChange = () => {
+    const updatedItemCount = JSON.parse(localStorage.getItem("nombre")) || 0;
+    setCartItemCount(updatedItemCount);
+  };
+
+  window.addEventListener('storage', handleStorageChange);
+
+  // Charger le nombre d'articles au montage du composant
+  const storedItemCount = JSON.parse(localStorage.getItem("nombre")) || 0;
+  setCartItemCount(storedItemCount);
+
+  // Nettoyer l'écouteur d'événements lors du démontage du composant
+  return () => {
+    window.removeEventListener('storage', handleStorageChange);
+  };
+}, []);
+
   return (
     <>
       <div className="bg-color">
@@ -40,8 +64,15 @@ export default function NavBar() {
                 ))}
             </ul>
             <form className="d-flex my-2 my-lg-0 p-2 ">
+              <Link to={"/pannier"}>
+                <IconButton>
+                <Badge badgeContent={cartItemCount} color="secondary">
+                  <ShoppingCartOutlinedIcon/>
+                </Badge>
+                </IconButton>
+              </Link>
               <button className="btn btn-color my-2 my-sm-0 " type="submit">
-                Commander
+                Connexion
               </button>
             </form>
           </div>
